@@ -13,14 +13,14 @@ export default function LifeExperience() {
   return (
     <section id="life-experience" className="py-20 lg:py-28 relative bg-gradient-to-b from-[#5c0f0f] via-zinc-950 to-[#5c0f0f]">
       <div className="container relative z-10 mx-auto px-6 lg:px-12 max-w-7xl">
-        
+
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-8 mb-12 lg:mb-16">
           <div className="max-w-xl">
             <span className="text-amber-400 text-xs md:text-sm font-bold tracking-widest uppercase mb-4 block">
               / LIFE AT TRIRAKSA
             </span>
             <h2 className="text-3xl md:text-5xl font-bold text-white leading-tight drop-shadow-lg">
-              Pengalaman Hidup di<br />Triraksa Village 2
+              Testimony<br />Triraksa Village 2
             </h2>
           </div>
           <div className="max-w-lg lg:pb-2">

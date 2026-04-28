@@ -24,28 +24,28 @@ export default function Hero() {
 
         {/* Carousel Navigation Arrows */}
         <button className="absolute left-6 lg:left-10 z-30 w-14 h-14 bg-black/40 hover:bg-amber-500 backdrop-blur-md rounded-full flex items-center justify-center text-white hover:text-black border border-white/20 transition-all shadow-xl opacity-0 group-hover:opacity-100">
-           <ChevronLeft className="w-8 h-8 -ml-1" />
+          <ChevronLeft className="w-8 h-8 -ml-1" />
         </button>
         <button className="absolute right-6 lg:right-10 z-30 w-14 h-14 bg-black/40 hover:bg-amber-500 backdrop-blur-md rounded-full flex items-center justify-center text-white hover:text-black border border-white/20 transition-all shadow-xl opacity-0 group-hover:opacity-100">
-           <ChevronRight className="w-8 h-8 -mr-1" />
+          <ChevronRight className="w-8 h-8 -mr-1" />
         </button>
 
         {/* Main Content Container (Left Aligned) */}
         <div className="relative z-20 px-8 lg:px-[8%] 2xl:px-[10%] w-full max-w-none mx-auto flex flex-col justify-center h-full pt-10 pb-28">
-          
+
           <div className="w-full max-w-3xl flex flex-col items-start text-left mt-20">
-            
-            <motion.h1 
+
+            <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, ease: "easeOut" }}
               className="text-5xl lg:text-7xl font-bold text-white leading-[1.1] mb-6 drop-shadow-lg"
             >
-              Hunian Impian <br/>
+              Hunian Impian <br />
               Keluarga Modern
             </motion.h1>
 
-            <motion.p 
+            <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, delay: 0.2, ease: "easeOut" }}
@@ -57,38 +57,38 @@ export default function Hero() {
             {/* Harga & CTA Section */}
             <div className="flex flex-col items-start gap-8 mt-2">
               {/* Harga Image (Enlarged) */}
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
               >
-                <motion.img 
+                <motion.img
                   animate={{ y: [0, -8, 0] }}
                   transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                  src="/harga.png" 
-                  alt="Harga Triraksa" 
+                  src="/harga.png"
+                  alt="Harga Triraksa"
                   className="w-[500px] lg:w-[650px] h-auto object-contain drop-shadow-[0_20px_30px_rgba(0,0,0,0.5)] hover:scale-105 transition-transform duration-300"
                 />
               </motion.div>
 
               {/* Tanya Unit Button */}
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
                 className="pl-2"
               >
-                <a href="https://wa.me/6281234567890" className="bg-amber-400 text-amber-950 font-bold px-10 py-5 rounded-full text-xl hover:bg-amber-300 transition-colors shadow-2xl flex items-center gap-3">
+                <a href="https://wa.me/6282130070003" className="bg-amber-400 text-amber-950 font-bold px-10 py-5 rounded-full text-xl hover:bg-amber-300 transition-colors shadow-2xl flex items-center gap-3">
                   Tanya Unit <ArrowUpRight className="w-6 h-6" />
                 </a>
               </motion.div>
             </div>
-            
+
           </div>
         </div>
 
         {/* BOTTOM FEATURE BAR */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
@@ -112,15 +112,15 @@ export default function Hero() {
           MOBILE HERO POSTER (Visible on Mobile/Tablets)
       ========================================= */}
       <section id="home-mobile" className="flex lg:hidden flex-col w-full bg-[url('/bg-red.jpg')] bg-cover bg-center bg-no-repeat font-sans">
-        
+
         {/* TOP SECTION: Fasad + Promo + Harga Overlap */}
         <div className="relative w-full flex flex-col items-center">
-          
+
           {/* Fasad Image Background */}
           <div className="w-full h-[65vh] min-h-[450px] relative">
-            <img 
-              src="/fasad.png" 
-              alt="Fasad Triraksa" 
+            <img
+              src="/fasad.png"
+              alt="Fasad Triraksa"
               className="absolute inset-0 w-full h-full object-cover object-top"
             />
             {/* Optional slight dark gradient at bottom for contrast */}
@@ -128,25 +128,21 @@ export default function Hero() {
           </div>
 
           {/* Promo Image (Absolute at top - Mobile Only) */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: -40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="absolute top-6 inset-x-0 flex justify-center px-4 z-10"
           >
-            <motion.img 
+            <motion.img
               animate={{ y: [0, -8, 0] }}
               transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
-              src="/promo.png" 
-              alt="Promo Triraksa" 
+              src="/promo.png"
+              alt="Promo Triraksa"
               className="w-[90%] max-w-sm drop-shadow-2xl"
             />
           </motion.div>
-
-
-
-
 
 
           {/* Harga Image (Absolute at bottom, overlapping into the red section) */}
@@ -157,11 +153,11 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
             className="absolute bottom-0 translate-y-[30%] inset-x-0 flex justify-center px-4 z-20"
           >
-            <motion.img 
+            <motion.img
               animate={{ y: [0, -6, 0] }}
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-              src="/Harga.png" 
-              alt="Harga Triraksa" 
+              src="/Harga.png"
+              alt="Harga Triraksa"
               className="w-[95%] max-w-[400px] drop-shadow-[0_20px_30px_rgba(0,0,0,0.6)]"
             />
           </motion.div>
@@ -180,21 +176,17 @@ export default function Hero() {
             className="relative z-10 text-white flex flex-col items-center gap-6"
           >
             <h2 className="text-2xl sm:text-3xl font-extrabold tracking-wide drop-shadow-md leading-tight">
-              Lokasi Strategis,<br/>Investasi Menarik!
+              Lokasi Strategis,<br />Investasi Menarik!
             </h2>
-            
+
             <p className="text-sm sm:text-base leading-relaxed text-white/95">
               Kawasan hunian modern yang dirancang khusus untuk menghadirkan kenyamanan, kemudahan, dan kualitas hidup terbaik bagi kamu dan keluarga.
             </p>
 
-            <p className="text-sm sm:text-base leading-relaxed text-white/95">
-              Mengusung konsep rumah minimalis modern yang fungsional, setiap ruang ditata secara optimal untuk memberikan suasana lega, nyaman, serta efisien dalam setiap aktivitas sehari-hari. Desain elegan dan tata ruang cerdas menjadikan hunian ini pilihan sempurna bagi keluarga masa kini.
-            </p>
-
             <div className="my-6 flex justify-center">
-              <img 
-                src="/logo-triraksa.png" 
-                alt="Logo Triraksa" 
+              <img
+                src="/logo-triraksa.png"
+                alt="Logo Triraksa"
                 className="w-48 sm:w-64 object-contain drop-shadow-xl"
               />
             </div>

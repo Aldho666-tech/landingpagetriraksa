@@ -27,15 +27,15 @@ export default function FloatingWhatsApp() {
         >
           {/* Subtle pulsing animation ring behind the button */}
           <div className="absolute inset-0 bg-[#25D366] rounded-full animate-ping opacity-25"></div>
-          
+
           <a
-            href="https://wa.me/6281234567890" // Replace with actual number if needed
+            href="https://wa.me/6282130070003" // Replace with actual number if needed
             target="_blank"
             rel="noopener noreferrer"
             className="relative flex items-center justify-center w-14 h-14 lg:w-16 lg:h-16 bg-[#25D366] text-white rounded-full shadow-[0_10px_30px_rgba(37,211,102,0.4)] hover:scale-110 hover:shadow-[0_15px_40px_rgba(37,211,102,0.6)] transition-all duration-300 group"
           >
             <FaWhatsapp className="w-8 h-8 lg:w-9 lg:h-9" />
-            
+
             {/* Minimalist Gen Z Tooltip */}
             <span className="absolute right-full mr-4 bg-white text-black text-xs font-bold py-2 px-4 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap shadow-xl tracking-widest hidden lg:block">
               TANYA UNIT

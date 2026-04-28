@@ -36,10 +36,10 @@ export default function Features() {
       <div className="absolute inset-0 bg-black/40 backdrop-blur-[2px]"></div>
 
       <div className="container relative z-10 mx-auto px-6 max-w-7xl">
-        
+
         {/* Section Header */}
         <div className="text-center mb-16">
-          <motion.span 
+          <motion.span
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -47,7 +47,7 @@ export default function Features() {
           >
             / AKSESIBILITAS
           </motion.span>
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -60,10 +60,10 @@ export default function Features() {
 
         {/* Marquee Container */}
         <div className="flex flex-col gap-6 mb-24 relative">
-          
+
           {/* Row 1 */}
           <div className="flex overflow-hidden">
-            <motion.div 
+            <motion.div
               animate={{ x: [0, -1000] }}
               transition={{ duration: 35, repeat: Infinity, ease: "linear" }}
               className="flex gap-6 whitespace-nowrap"
@@ -88,7 +88,7 @@ export default function Features() {
 
           {/* Row 2 */}
           <div className="flex overflow-hidden">
-            <motion.div 
+            <motion.div
               animate={{ x: [-1000, 0] }}
               transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
               className="flex gap-6 whitespace-nowrap"
@@ -124,7 +124,6 @@ export default function Features() {
           className="w-full max-w-5xl mx-auto"
         >
           <div className="text-center mb-8">
-            <span className="text-amber-400 text-xs font-bold tracking-[0.3em] uppercase mb-4 block">/ FASILITAS KOMUNITAS</span>
           </div>
           <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border border-white/10 group">
             <img src="/Fasilitas.png" alt="Fasilitas Triraksa Village 2" className="w-full h-auto object-contain transition-transform duration-700 group-hover:scale-105" />

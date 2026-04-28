@@ -30,10 +30,10 @@ export default function Footer() {
         <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-amber-900/15 rounded-full blur-[80px]" />
       </div>
 
-      <div className="relative z-10 container mx-auto px-6 max-w-6xl">
+      <div className="relative z-10 container mx-auto px-6 max-w-7xl">
 
         {/* Main footer content */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-16 py-20 border-b border-white/8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 py-16 border-b border-white/8">
 
           {/* Brand column */}
           <motion.div
@@ -47,9 +47,6 @@ export default function Footer() {
               alt="Triraksa Village 2"
               className="w-36 object-contain drop-shadow-lg"
             />
-            <p className="text-white/50 text-sm leading-relaxed max-w-xs">
-              Hunian modern keluarga masa kini yang mengutamakan kenyamanan, keamanan, dan nilai investasi jangka panjang di Tigaraksa, Tangerang.
-            </p>
             {/* Social icons */}
             <div className="flex items-center gap-3">
               {socialLinks.map((s) => (
@@ -67,13 +64,13 @@ export default function Footer() {
             </div>
           </motion.div>
 
-          {/* Quick links column - Hidden on mobile for minimalism */}
+          {/* Quick links column */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="hidden md:flex flex-col gap-6"
+            className="flex flex-col gap-6"
           >
             <h3 className="text-sm font-bold uppercase tracking-[0.2em] text-white/40">
               Navigasi
@@ -100,7 +97,7 @@ export default function Footer() {
             transition={{ delay: 0.2 }}
             className="flex flex-col gap-6"
           >
-            <h3 className="text-sm font-bold uppercase tracking-[0.2em] text-white/40 hidden md:block">
+            <h3 className="text-sm font-bold uppercase tracking-[0.2em] text-white/40">
               Hubungi Kami
             </h3>
             <div className="flex flex-col gap-5">
@@ -108,35 +105,58 @@ export default function Footer() {
                 href="https://wa.me/6281234567890"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center md:items-start gap-3 group"
+                className="flex items-center gap-3 group"
               >
                 <div className="w-8 h-8 rounded-lg bg-white/8 flex items-center justify-center flex-shrink-0 group-hover:bg-amber-500/20 transition-colors">
                   <Phone className="w-4 h-4 text-white/50 group-hover:text-amber-400 transition-colors" />
                 </div>
                 <div>
-                  <p className="text-white/70 text-sm font-medium group-hover:text-white transition-colors">+62 812-3456-7890</p>
+                  <p className="text-white/70 text-sm font-medium group-hover:text-white transition-colors">0821-3007-0003</p>
                 </div>
               </a>
-              <div className="flex items-center md:items-start gap-3">
+              <div className="flex items-center gap-3">
                 <div className="w-8 h-8 rounded-lg bg-white/8 flex items-center justify-center flex-shrink-0">
                   <MapPin className="w-4 h-4 text-white/50" />
                 </div>
                 <div>
                   <p className="text-white/70 text-sm font-medium leading-snug">
-                    Tigaraksa, Kab. Tangerang, Banten
+                    Jl. Raya Triraksa Village 2, Tigaraksa, Kec. Tigaraksa, Kabupaten Tangerang, Banten 15720
                   </p>
                 </div>
               </div>
             </div>
           </motion.div>
+
+          {/* Map Column */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3 }}
+            className="flex flex-col gap-6"
+          >
+            <h3 className="text-sm font-bold uppercase tracking-[0.2em] text-white/40">
+              Lokasi Kami
+            </h3>
+            <div className="w-full h-48 rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d589.5508003675973!2d106.46184012357536!3d-6.262512605101725!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e42070f1f8d8715%3A0xd3a9fd5dd2411273!2sTriraksa%20Village%202!5e0!3m2!1sid!2sid!4v1777361303700!5m2!1sid!2sid"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen={true}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+          </motion.div>
+
         </div>
-
-
 
         {/* Bottom bar */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-3 py-8 text-xs text-white/25">
           <p>&copy; {new Date().getFullYear()} Triraksa Village 2. All rights reserved.</p>
-          <p>Powered by Markom BPG</p>
+          <p>Powered by Marcom BPG</p>
         </div>
       </div>
     </footer>

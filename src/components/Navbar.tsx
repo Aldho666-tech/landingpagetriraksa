@@ -76,8 +76,8 @@ export default function Navbar() {
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"
           >
-            <span className="w-7 h-[2px] bg-white rounded-full transition-all"></span>
-            <span className="w-5 h-[2px] bg-white rounded-full transition-all"></span>
+            <span className={`h-[2px] bg-white rounded-full transition-all duration-300 ${isOpen ? 'w-8 rotate-45 translate-y-[8px]' : 'w-7'}`}></span>
+            <span className={`h-[2px] bg-white rounded-full transition-all duration-300 ${isOpen ? 'w-8 -rotate-45 -translate-y-[0px]' : 'w-5'}`}></span>
           </button>
         </div>
       </div>
@@ -86,10 +86,10 @@ export default function Navbar() {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, y: "-100%" }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: "-100%" }}
-            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            initial={{ opacity: 0, x: "100%" }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: "100%" }}
+            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
             className="fixed inset-0 bg-[#0a0a0a] px-8 py-10 flex flex-col z-[60] lg:hidden overflow-hidden"
           >
             {/* Header inside overlay */}
@@ -97,7 +97,7 @@ export default function Navbar() {
               <img src="/logo-triraksa.png" alt="Triraksa Logo" className="h-10 w-auto object-contain drop-shadow-md" />
               <button
                 onClick={() => setIsOpen(false)}
-                className="text-white/60 hover:text-white text-xs font-bold tracking-[0.2em] transition-colors"
+                className="text-white/60 hover:text-white text-[10px] font-bold tracking-[0.3em] transition-colors bg-white/5 px-4 py-2 rounded-full border border-white/10"
               >
                 CLOSE
               </button>
@@ -109,10 +109,10 @@ export default function Navbar() {
                 <motion.a
                   key={link.name}
                   href={link.href}
-                  initial={{ opacity: 0, x: -30 }}
+                  initial={{ opacity: 0, x: 20 }}
                   animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.1 + index * 0.1, duration: 0.5, ease: "easeOut" }}
-                  className="text-4xl sm:text-5xl font-black text-white tracking-tighter hover:text-amber-400 transition-colors uppercase"
+                  transition={{ delay: 0.1 + index * 0.1, duration: 0.4, ease: "easeOut" }}
+                  className="text-3xl sm:text-4xl font-bold text-white tracking-wide hover:text-amber-400 transition-colors uppercase"
                   onClick={() => setIsOpen(false)}
                 >
                   {link.name}
@@ -120,21 +120,35 @@ export default function Navbar() {
               ))}
             </nav>
 
-            {/* CTA */}
+            {/* Bottom Footer Area inside Menu */}
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6, duration: 0.4 }}
-              className="mt-auto pt-8 border-t border-amber-400/30"
+              className="mt-auto pt-8 border-t border-white/10"
             >
-              <a
-                href="#contact"
-                onClick={() => setIsOpen(false)}
-                className="flex items-center justify-between w-full py-4 text-white hover:text-amber-400 transition-colors group"
-              >
-                <span className="text-sm font-bold tracking-[0.2em]">HUBUNGI KAMI</span>
-                <span className="text-xl font-light transform group-hover:translate-x-2 transition-transform">→</span>
-              </a>
+              <div className="flex flex-col gap-6">
+                <div className="flex items-center gap-4">
+                  <a href="#" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/60 hover:text-amber-400 hover:border-amber-400/50 transition-all">
+                    <FaInstagram className="w-4 h-4" />
+                  </a>
+                  <a href="#" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/60 hover:text-amber-400 hover:border-amber-400/50 transition-all">
+                    <FaTwitter className="w-4 h-4" />
+                  </a>
+                  <a href="#" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/60 hover:text-amber-400 hover:border-amber-400/50 transition-all">
+                    <FaYoutube className="w-4 h-4" />
+                  </a>
+                </div>
+                
+                <a
+                  href="#contact"
+                  onClick={() => setIsOpen(false)}
+                  className="flex items-center justify-between w-full py-5 px-6 bg-amber-400 rounded-2xl text-black hover:bg-amber-500 transition-all group shadow-[0_10px_20px_rgba(251,191,36,0.2)]"
+                >
+                  <span className="text-xs font-black tracking-[0.2em]">HUBUNGI KAMI</span>
+                  <span className="text-xl transform group-hover:translate-x-1 transition-transform">→</span>
+                </a>
+              </div>
             </motion.div>
           </motion.div>
         )}
