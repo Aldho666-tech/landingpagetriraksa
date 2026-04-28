@@ -1,27 +1,21 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { BedDouble, ChefHat, Bath, Sofa, Car, ArrowUpSquare, ChevronLeft, ChevronRight } from "lucide-react";
-import { useRef, useState, useEffect } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import { useRef, useState } from "react";
 
 const houseTypes = [
   {
-    name: "Brick",
-    subName: "Plus",
-    image: "https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&w=1600",
-    features: ["2 Kamar Tidur", "1 Dapur", "1 Kamar Mandi", "1 Ruang Tamu", "Carport Luas", "Taman Asri"]
+    name: "Brick Mezza",
+    image: "/Brick Mezza.png"
   },
   {
-    name: "Brick",
-    subName: "Mezza",
-    image: "https://images.pexels.com/photos/1396132/pexels-photo-1396132.jpeg?auto=compress&cs=tinysrgb&w=1600",
-    features: ["2 Kamar Tidur", "1 Dapur", "1 Kamar Mandi", "1 Ruang Tamu", "Carport Luas", "1 Mezzanine"]
+    name: "Brick Plus",
+    image: "/Brick Plus.png"
   },
   {
-    name: "Brick",
-    subName: "Neo",
-    image: "https://images.pexels.com/photos/208736/pexels-photo-208736.jpeg?auto=compress&cs=tinysrgb&w=1600",
-    features: ["2 Kamar Tidur", "1 Dapur", "1 Kamar Mandi", "1 Ruang Tamu", "Carport Luas", "Design Modern"]
+    name: "Brick Neo",
+    image: "/Brick Neo.png"
   }
 ];
 
@@ -81,78 +75,46 @@ export default function About() {
              </p>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="w-full relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-amber-400 bg-zinc-900 mt-6 lg:mt-0 group"
-          >
-            {/* Navigation Arrows */}
-            <button 
-              onClick={() => stepScroll('left')}
-              className="absolute left-4 top-1/2 -translate-y-1/2 z-40 w-10 h-10 bg-black/40 hover:bg-amber-500 rounded-full flex items-center justify-center text-white transition-all opacity-0 group-hover:opacity-100 disabled:opacity-0"
-              disabled={activeIndex === 0}
+          <div className="w-full relative mt-6 lg:mt-0 group">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              className="relative aspect-[4/5] md:aspect-[3/4] lg:aspect-[4/5] w-full rounded-[2rem] overflow-hidden border-4 border-amber-400 shadow-2xl bg-zinc-900"
             >
-              <ChevronLeft className="w-6 h-6" />
-            </button>
-            <button 
-              onClick={() => stepScroll('right')}
-              className="absolute right-4 top-1/2 -translate-y-1/2 z-40 w-10 h-10 bg-black/40 hover:bg-amber-500 rounded-full flex items-center justify-center text-white transition-all opacity-0 group-hover:opacity-100 disabled:opacity-0"
-              disabled={activeIndex === houseTypes.length - 1}
-            >
-              <ChevronRight className="w-6 h-6" />
-            </button>
+              {/* Navigation Arrows */}
+              <button 
+                onClick={() => stepScroll('left')}
+                className="absolute left-4 top-1/2 -translate-y-1/2 z-40 w-12 h-12 bg-black/60 hover:bg-amber-500 rounded-full flex items-center justify-center text-white transition-all opacity-0 group-hover:opacity-100 disabled:opacity-0"
+                disabled={activeIndex === 0}
+              >
+                <ChevronLeft className="w-8 h-8" />
+              </button>
+              <button 
+                onClick={() => stepScroll('right')}
+                className="absolute right-4 top-1/2 -translate-y-1/2 z-40 w-12 h-12 bg-black/60 hover:bg-amber-500 rounded-full flex items-center justify-center text-white transition-all opacity-0 group-hover:opacity-100 disabled:opacity-0"
+                disabled={activeIndex === houseTypes.length - 1}
+              >
+                <ChevronRight className="w-8 h-8" />
+              </button>
 
-            <div 
-              ref={scrollRef}
-              onScroll={handleScroll}
-              className="flex overflow-x-auto snap-x snap-mandatory [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none'] h-[450px] md:h-[600px] w-full touch-pan-x cursor-grab active:cursor-grabbing"
-            >
-              {houseTypes.map((type, i) => (
-                <div key={i} className="w-full h-full flex-shrink-0 snap-center relative">
-                  <img
-                    src={type.image}
-                    alt={`${type.name} ${type.subName}`}
-                    className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-500"
-                  />
-                  
-                  <div className="absolute top-4 right-4 z-20 bg-white/95 backdrop-blur-md px-6 py-2 rounded-xl shadow-xl border border-amber-200">
-                    <span className="font-bold text-2xl text-amber-900 tracking-tight">{type.name}</span> <span className="font-sans font-bold text-xl text-amber-900">{type.subName}</span>
+              <div 
+                ref={scrollRef}
+                onScroll={handleScroll}
+                className="absolute inset-0 flex overflow-x-auto snap-x snap-mandatory [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none'] touch-pan-x cursor-grab active:cursor-grabbing"
+              >
+                {houseTypes.map((type, i) => (
+                  <div key={i} className="w-full h-full flex-shrink-0 snap-center relative">
+                    <img
+                      src={type.image}
+                      alt={type.name}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
-
-                  <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black via-black/80 to-transparent p-6 pt-24 pointer-events-none">
-                    <div className="grid grid-cols-3 gap-y-6 gap-x-4 justify-items-center">
-                      <div className="flex flex-col items-center text-amber-400 gap-2">
-                        <BedDouble className="w-7 h-7" />
-                        <span className="text-[10px] md:text-xs font-semibold text-white text-center">{type.features[0]}</span>
-                      </div>
-                      <div className="flex flex-col items-center text-amber-400 gap-2">
-                        <ChefHat className="w-7 h-7" />
-                        <span className="text-[10px] md:text-xs font-semibold text-white text-center">{type.features[1]}</span>
-                      </div>
-                      <div className="flex flex-col items-center text-amber-400 gap-2">
-                        <Bath className="w-7 h-7" />
-                        <span className="text-[10px] md:text-xs font-semibold text-white text-center">{type.features[2]}</span>
-                      </div>
-                      <div className="flex flex-col items-center text-amber-400 gap-2">
-                        <Sofa className="w-7 h-7" />
-                        <span className="text-[10px] md:text-xs font-semibold text-white text-center">{type.features[3]}</span>
-                      </div>
-                      <div className="flex flex-col items-center text-amber-400 gap-2">
-                        <Car className="w-7 h-7" />
-                        <span className="text-[10px] md:text-xs font-semibold text-white text-center">{type.features[4]}</span>
-                      </div>
-                      <div className="flex flex-col items-center text-amber-400 gap-2">
-                        <ArrowUpSquare className="w-7 h-7" />
-                        <span className="text-[10px] md:text-xs font-semibold text-white text-center">{type.features[5]}</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          </div>
         </div>
 
         {/* Carousel Dots */}
