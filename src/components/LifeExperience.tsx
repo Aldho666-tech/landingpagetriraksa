@@ -30,8 +30,8 @@ export default function LifeExperience() {
           </div>
         </div>
 
-        {/* Native IG Embed Slider/Grid matching User's Reference */}
-        <div className="flex overflow-x-auto gap-6 md:gap-8 pb-8 snap-x snap-mandatory [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none'] items-start">
+        {/* Native IG Embed Slider on Mobile/Laptop, Grid on Large PC */}
+        <div className="flex xl:grid xl:grid-cols-4 overflow-x-auto xl:overflow-visible gap-6 md:gap-8 pb-8 snap-x snap-mandatory [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none'] items-start">
           {shortcodes.map((code, idx) => (
             <motion.div
               key={idx}
@@ -39,7 +39,7 @@ export default function LifeExperience() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
-              className="snap-center flex-shrink-0 min-w-[300px] md:min-w-[350px] xl:min-w-0 w-[85vw] md:w-[350px] xl:w-full mx-auto bg-transparent overflow-hidden"
+              className="snap-center flex-shrink-0 w-[85vw] md:w-[350px] xl:w-full mx-auto bg-transparent overflow-hidden"
             >
               <iframe
                 src={`https://www.instagram.com/p/${code}/embed`}
