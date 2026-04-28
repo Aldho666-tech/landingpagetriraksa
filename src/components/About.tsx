@@ -21,7 +21,7 @@ export default function About() {
             viewport={{ once: true }}
             className="flex flex-col items-center lg:items-start text-center lg:text-left"
           >
-             <h2 className="text-3xl md:text-5xl font-serif font-bold text-white mb-6 italic drop-shadow-lg">
+             <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-6 drop-shadow-lg leading-tight">
                Lokasi Strategis,<br/>Investasi Menarik!
              </h2>
              <p className="text-white/90 text-sm md:text-base leading-relaxed font-medium drop-shadow-md mb-8 max-w-xl text-justify md:text-left">
@@ -29,9 +29,10 @@ export default function About() {
                <br/><br/>
                Mengusung konsep rumah minimalis modern yang sangat fungsional. Setiap ruang ditata secara cerdas untuk memberikan suasana lega dan efisien, menjadikannya pilihan sempurna bagi keluarga masa kini.
              </p>
-             
-             <img src="/AW2.png" alt="Cluster Aria Wangsakara 2" className="w-[70%] lg:w-[80%] max-w-[320px] object-contain drop-shadow-2xl mb-8" />
-             
+             <div className="flex items-center gap-4 mb-8">
+               <img src="/AW2.png" alt="Cluster Aria Wangsakara 2" className="w-[65%] max-w-[280px] object-contain drop-shadow-2xl" />
+               <img src="/promo.png" alt="Promo Spesial" className="w-[30%] max-w-[120px] object-contain drop-shadow-2xl animate-pulse-slow" />
+             </div>
              <p className="text-white/90 text-sm md:text-base leading-relaxed font-medium drop-shadow-md max-w-xl">
                Nikmati kenyamanan hidup di Cluster Aria Wangsakara II, sebuah cluster hunian modern yang dirancang untuk keluarga urban yang mengutamakan kemudahan, keamanan, dan nilai investasi jangka panjang.
              </p>
@@ -43,24 +44,28 @@ export default function About() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="w-full relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-amber-400/80 bg-zinc-900 mt-6 lg:mt-0"
+            className="w-full relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-amber-400/80 bg-zinc-900 mt-6 lg:mt-0 group"
           >
-            {/* Promo Floating Badge */}
-            <img 
-              src="/promo.png" 
-              alt="Promo Spesial" 
-              className="absolute -top-4 -left-4 z-30 w-28 md:w-40 drop-shadow-2xl animate-pulse-slow"
-            />
-
             <div className="absolute top-4 right-4 z-20 bg-white/95 backdrop-blur-md px-6 py-2 rounded-xl shadow-xl border border-amber-200">
-              <span className="font-serif italic text-2xl text-amber-900">Brick</span> <span className="font-sans font-black text-xl text-amber-900">Plus <br/><span className="text-sm font-medium">Mezza</span></span>
+              <span className="font-extrabold text-2xl text-amber-900 tracking-tight">Brick</span> <span className="font-sans font-black text-xl text-amber-900">Plus <br/><span className="text-sm font-medium">Mezza</span></span>
             </div>
 
-            <img
-              src="https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&w=1600"
-              alt="Aria Wangsakara House"
-              className="w-full h-[400px] md:h-[550px] object-cover opacity-90 hover:scale-105 transition-transform duration-700"
-            />
+            {/* Image Carousel */}
+            <div className="flex overflow-x-auto snap-x snap-mandatory [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none'] h-[400px] md:h-[550px] w-full">
+              {[
+                "https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&w=1600",
+                "https://images.pexels.com/photos/1396132/pexels-photo-1396132.jpeg?auto=compress&cs=tinysrgb&w=1600",
+                "https://images.pexels.com/photos/208736/pexels-photo-208736.jpeg?auto=compress&cs=tinysrgb&w=1600"
+              ].map((imgUrl, i) => (
+                <div key={i} className="w-full h-full flex-shrink-0 snap-center relative">
+                  <img
+                    src={imgUrl}
+                    alt={`Aria Wangsakara House ${i + 1}`}
+                    className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-500"
+                  />
+                </div>
+              ))}
+            </div>
 
             {/* Features Overlay */}
             <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black via-black/80 to-transparent p-6 pt-24">

@@ -1,31 +1,13 @@
 "use client";
 
-import { useState } from "react";
 import { motion } from "framer-motion";
-import { Play } from "lucide-react";
 
 export default function LifeExperience() {
-  const videos = [
-    { 
-      shortcode: "DPD7iZZj72M",
-      url: "https://www.instagram.com/reel/DPD7iZZj72M/?igsh=Nm5sODhpb3F5MHZi",
-      img: "https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&w=400" 
-    },
-    { 
-      shortcode: "DOxtxi_k714",
-      url: "https://www.instagram.com/reel/DOxtxi_k714/?igsh=c3BkdTV1c29kdHVp",
-      img: "https://images.pexels.com/photos/1396132/pexels-photo-1396132.jpeg?auto=compress&cs=tinysrgb&w=400" 
-    },
-    { 
-      shortcode: "DLEF1GOBTD6",
-      url: "https://www.instagram.com/reel/DLEF1GOBTD6/?igsh=MWNoN2ZjMGx4ZnR1NQ==",
-      img: "https://images.pexels.com/photos/208736/pexels-photo-208736.jpeg?auto=compress&cs=tinysrgb&w=400" 
-    },
-    { 
-      shortcode: "DN2cDg-5pA-",
-      url: "https://www.instagram.com/reel/DN2cDg-5pA-/?igsh=MXh6bGFxbWl1bHQ2ag==",
-      img: "https://images.pexels.com/photos/221506/pexels-photo-221506.jpeg?auto=compress&cs=tinysrgb&w=400" 
-    },
+  const shortcodes = [
+    "DPD7iZZj72M",
+    "DOxtxi_k714",
+    "DLEF1GOBTD6",
+    "DN2cDg-5pA-"
   ];
 
   return (
@@ -48,63 +30,29 @@ export default function LifeExperience() {
           </div>
         </div>
 
-        {/* Minimalist Video Slider/Grid */}
-        <div className="flex overflow-x-auto lg:grid lg:grid-cols-4 gap-6 pb-8 snap-x snap-mandatory [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none']">
-          {videos.map((vid, idx) => (
-            <VideoCard key={idx} vid={vid} idx={idx} />
+        {/* Native IG Embed Slider/Grid matching User's Reference */}
+        <div className="flex overflow-x-auto xl:grid xl:grid-cols-4 gap-6 md:gap-8 pb-8 snap-x snap-mandatory [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none'] items-start">
+          {shortcodes.map((code, idx) => (
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: idx * 0.1 }}
+              className="snap-center flex-shrink-0 min-w-[300px] md:min-w-[350px] xl:min-w-0 w-[85vw] md:w-[350px] xl:w-full mx-auto bg-transparent overflow-hidden"
+            >
+              <iframe
+                src={`https://www.instagram.com/p/${code}/embed`}
+                className="w-full h-[620px] border border-gray-200/20 bg-white rounded-md shadow-2xl"
+                scrolling="no"
+                allowTransparency={true}
+                allow="encrypted-media"
+              ></iframe>
+            </motion.div>
           ))}
         </div>
 
       </div>
     </section>
-  );
-}
-
-function VideoCard({ vid, idx }: { vid: any, idx: number }) {
-  const [isPlaying, setIsPlaying] = useState(false);
-
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ delay: idx * 0.1 }}
-      className="bg-black/20 rounded-3xl overflow-hidden shadow-2xl flex flex-col snap-center flex-shrink-0 min-w-[300px] w-[85vw] lg:w-full max-w-[350px] lg:max-w-none mx-auto border border-amber-400/20 hover:border-amber-400/60 transition-all duration-300 relative group"
-    >
-      {!isPlaying ? (
-        // Facade: Minimalist UI
-        <div className="relative w-full h-[520px] md:h-[580px] overflow-hidden cursor-pointer" onClick={() => setIsPlaying(true)}>
-          {/* Clean IG Profile Tag */}
-          <div className="absolute top-4 left-4 z-20 flex items-center gap-2 bg-black/40 backdrop-blur-md py-1.5 px-3 rounded-full border border-white/10">
-            <div className="w-5 h-5 rounded-full bg-white p-0.5 flex items-center justify-center">
-               <img src="/logo-triraksa.png" alt="logo" className="w-full h-full object-contain" />
-            </div>
-            <span className="text-white text-[10px] font-bold tracking-wide">@triraksa_village</span>
-          </div>
-
-          <img 
-            src={vid.img} 
-            alt="Triraksa Reel" 
-            className="w-full h-full object-cover opacity-80 group-hover:scale-105 group-hover:opacity-100 transition-all duration-700" 
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-black/20 transition-colors flex items-center justify-center">
-            <div className="w-16 h-16 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center group-hover:scale-110 group-hover:bg-amber-400 transition-all duration-300 shadow-[0_0_20px_rgba(0,0,0,0.5)] group-hover:shadow-[0_0_25px_rgba(251,191,36,0.6)]">
-              <Play className="w-8 h-8 text-white ml-1 drop-shadow-md" fill="currentColor" />
-            </div>
-          </div>
-        </div>
-      ) : (
-        // Active: Native Instagram Embed
-        <div className="w-full h-[520px] md:h-[580px] bg-white flex items-center justify-center">
-          <iframe
-            src={`https://www.instagram.com/p/${vid.shortcode}/embed`}
-            className="w-full h-full border-none bg-white"
-            scrolling="no"
-            allowTransparency={true}
-            allow="encrypted-media"
-          ></iframe>
-        </div>
-      )}
-    </motion.div>
   );
 }

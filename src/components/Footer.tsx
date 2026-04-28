@@ -31,7 +31,7 @@ export default function Footer() {
       </div>
 
       <div className="relative z-10 container mx-auto px-6 max-w-6xl">
-        
+
         {/* Main footer content */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-16 py-20 border-b border-white/8">
 
@@ -136,7 +136,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-3 py-8 text-xs text-white/25">
           <p>&copy; {new Date().getFullYear()} Triraksa Village 2. All rights reserved.</p>
-          <p>Halaman Resmi Triraksa Village 2</p>
+          <p>Powered by Markom BPG</p>
         </div>
       </div>
     </footer>
