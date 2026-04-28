@@ -36,7 +36,6 @@ export default function Features() {
       <div className="absolute inset-0 bg-black/40 backdrop-blur-[2px]"></div>
 
       <div className="container relative z-10 mx-auto px-6 max-w-7xl">
-
         {/* Section Header */}
         <div className="text-center mb-16">
           <motion.span
@@ -57,65 +56,66 @@ export default function Features() {
             Lokasi Strategis & Terhubung
           </motion.h2>
         </div>
+      </div>
 
-        {/* Marquee Container */}
-        <div className="flex flex-col gap-6 mb-24 relative">
-
-          {/* Row 1 */}
-          <div className="flex overflow-hidden">
-            <motion.div
-              animate={{ x: [0, -1000] }}
-              transition={{ duration: 35, repeat: Infinity, ease: "linear" }}
-              className="flex gap-6 whitespace-nowrap"
-            >
-              {[...firstRow, ...firstRow, ...firstRow].map((item, index) => (
-                <div
-                  key={index}
-                  className="flex-shrink-0 flex items-center gap-4 bg-black/40 backdrop-blur-md px-6 py-4 rounded-2xl border border-white/10 hover:border-amber-400/40 transition-all group"
-                >
-                  <div className="bg-amber-400 text-amber-950 w-12 h-12 rounded-xl flex flex-col items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
-                    <span className="text-xl font-black leading-none">{item.time}</span>
-                    <span className="text-[8px] font-bold uppercase">{item.unit}</span>
-                  </div>
-                  <div className="flex flex-col">
-                    {item.label && <span className="text-[9px] text-zinc-300 font-bold uppercase tracking-widest leading-tight">{item.label}</span>}
-                    <span className="text-sm md:text-base font-bold text-white tracking-wide uppercase">{item.title}</span>
-                  </div>
+      {/* Marquee Container - MOVED OUTSIDE CONTAINER FOR FULL WIDTH */}
+      <div className="flex flex-col gap-6 mb-24 relative w-full overflow-hidden">
+        {/* Row 1 */}
+        <div className="flex overflow-hidden">
+          <motion.div
+            animate={{ x: [0, -1000] }}
+            transition={{ duration: 35, repeat: Infinity, ease: "linear" }}
+            className="flex gap-6 whitespace-nowrap px-6"
+          >
+            {[...firstRow, ...firstRow, ...firstRow].map((item, index) => (
+              <div
+                key={index}
+                className="flex-shrink-0 flex items-center gap-4 bg-black/40 backdrop-blur-md px-6 py-4 rounded-2xl border border-white/10 hover:border-amber-400/40 transition-all group"
+              >
+                <div className="bg-amber-400 text-amber-950 w-12 h-12 rounded-xl flex flex-col items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                  <span className="text-xl font-black leading-none">{item.time}</span>
+                  <span className="text-[8px] font-bold uppercase">{item.unit}</span>
                 </div>
-              ))}
-            </motion.div>
-          </div>
-
-          {/* Row 2 */}
-          <div className="flex overflow-hidden">
-            <motion.div
-              animate={{ x: [-1000, 0] }}
-              transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
-              className="flex gap-6 whitespace-nowrap"
-            >
-              {[...secondRow, ...secondRow, ...secondRow].map((item, index) => (
-                <div
-                  key={index}
-                  className="flex-shrink-0 flex items-center gap-4 bg-black/40 backdrop-blur-md px-6 py-4 rounded-2xl border border-white/10 hover:border-amber-400/40 transition-all group"
-                >
-                  <div className="bg-amber-400 text-amber-950 w-12 h-12 rounded-xl flex flex-col items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
-                    <span className="text-xl font-black leading-none">{item.time}</span>
-                    <span className="text-[8px] font-bold uppercase">{item.unit}</span>
-                  </div>
-                  <div className="flex flex-col">
-                    {item.label && <span className="text-[9px] text-zinc-300 font-bold uppercase tracking-widest leading-tight">{item.label}</span>}
-                    <span className="text-sm md:text-base font-bold text-white tracking-wide uppercase">{item.title}</span>
-                  </div>
+                <div className="flex flex-col">
+                  {item.label && <span className="text-[9px] text-zinc-300 font-bold uppercase tracking-widest leading-tight">{item.label}</span>}
+                  <span className="text-sm md:text-base font-bold text-white tracking-wide uppercase">{item.title}</span>
                 </div>
-              ))}
-            </motion.div>
-          </div>
-
-          {/* Fading Edges with Red-ish Gradient */}
-          <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-[#5c0f0f]/80 to-transparent z-10 pointer-events-none"></div>
-          <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-[#5c0f0f]/80 to-transparent z-10 pointer-events-none"></div>
+              </div>
+            ))}
+          </motion.div>
         </div>
 
+        {/* Row 2 */}
+        <div className="flex overflow-hidden">
+          <motion.div
+            animate={{ x: [-1000, 0] }}
+            transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+            className="flex gap-6 whitespace-nowrap px-6"
+          >
+            {[...secondRow, ...secondRow, ...secondRow].map((item, index) => (
+              <div
+                key={index}
+                className="flex-shrink-0 flex items-center gap-4 bg-black/40 backdrop-blur-md px-6 py-4 rounded-2xl border border-white/10 hover:border-amber-400/40 transition-all group"
+              >
+                <div className="bg-amber-400 text-amber-950 w-12 h-12 rounded-xl flex flex-col items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                  <span className="text-xl font-black leading-none">{item.time}</span>
+                  <span className="text-[8px] font-bold uppercase">{item.unit}</span>
+                </div>
+                <div className="flex flex-col">
+                  {item.label && <span className="text-[9px] text-zinc-300 font-bold uppercase tracking-widest leading-tight">{item.label}</span>}
+                  <span className="text-sm md:text-base font-bold text-white tracking-wide uppercase">{item.title}</span>
+                </div>
+              </div>
+            ))}
+          </motion.div>
+        </div>
+
+        {/* Fading Edges with Red-ish Gradient */}
+        <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-black/60 to-transparent z-10 pointer-events-none"></div>
+        <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-black/60 to-transparent z-10 pointer-events-none"></div>
+      </div>
+
+      <div className="container relative z-10 mx-auto px-6 max-w-7xl">
         {/* Facilities Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -123,14 +123,11 @@ export default function Features() {
           viewport={{ once: true }}
           className="w-full max-w-5xl mx-auto"
         >
-          <div className="text-center mb-8">
-          </div>
-          <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border border-white/10 group">
-            <img src="/Fasilitas.png" alt="Fasilitas Triraksa Village 2" className="w-full h-auto object-contain transition-transform duration-700 group-hover:scale-105" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+          <div className="relative rounded-[3rem] overflow-hidden shadow-[0_30px_60px_-15px_rgba(0,0,0,0.8)] border border-white/10 group bg-black/20 backdrop-blur-sm">
+            <img src="/Fasilitas.png" alt="Fasilitas Triraksa Village 2" className="w-full h-auto object-contain transition-transform duration-1000 group-hover:scale-110" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
           </div>
         </motion.div>
-
       </div>
     </section>
   );

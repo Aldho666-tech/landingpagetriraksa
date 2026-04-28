@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { MapPin, ArrowUpRight, ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowUpRight, ChevronLeft, ChevronRight } from "lucide-react";
 
 export default function Hero() {
   return (
@@ -117,7 +117,7 @@ export default function Hero() {
         <div className="relative w-full flex flex-col items-center">
 
           {/* Fasad Image Background */}
-          <div className="w-full h-[65vh] min-h-[450px] relative">
+          <div className="w-full h-[55vh] min-h-[380px] relative">
             <img
               src="/fasad.png"
               alt="Fasad Triraksa"
@@ -163,39 +163,8 @@ export default function Hero() {
           </motion.div>
         </div>
 
-        {/* BOTTOM SECTION: Red Text Content */}
-        <div className="w-full px-6 pt-28 sm:pt-32 pb-20 relative text-center">
-          {/* Greenish glow effect at bottom right */}
-          <div className="absolute bottom-0 right-0 w-64 h-64 bg-[#97d700] rounded-full blur-[100px] opacity-30 pointer-events-none"></div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-            className="relative z-10 text-white flex flex-col items-center gap-6"
-          >
-            <h2 className="text-2xl sm:text-3xl font-extrabold tracking-wide drop-shadow-md leading-tight">
-              Lokasi Strategis,<br />Investasi Menarik!
-            </h2>
-
-            <p className="text-sm sm:text-base leading-relaxed text-white/95">
-              Kawasan hunian modern yang dirancang khusus untuk menghadirkan kenyamanan, kemudahan, dan kualitas hidup terbaik bagi kamu dan keluarga.
-            </p>
-
-            <div className="my-6 flex justify-center">
-              <img
-                src="/logo-triraksa.png"
-                alt="Logo Triraksa"
-                className="w-48 sm:w-64 object-contain drop-shadow-xl"
-              />
-            </div>
-
-            <p className="text-sm sm:text-base leading-relaxed text-white/95">
-              Nikmati kenyamanan hidup di Cluster Aria Wangsakara II, sebuah cluster hunian modern yang dirancang untuk keluarga urban yang mengutamakan kemudahan, keamanan, dan nilai investasi jangka panjang.
-            </p>
-          </motion.div>
-        </div>
+        {/* Reduced spacing for the overlapping Harga image on mobile */}
+        <div className="h-12 bg-transparent" />
       </section>
     </>
   );

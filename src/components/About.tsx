@@ -57,22 +57,18 @@ export default function About() {
             viewport={{ once: true }}
             className="flex flex-col items-center lg:items-start text-center lg:text-left"
           >
-            <div className="hidden lg:block">
-               <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 drop-shadow-lg leading-tight">
-                 Lokasi Strategis,<br/>Investasi Menarik!
-               </h2>
-               <p className="text-white/90 text-sm md:text-base leading-relaxed font-medium drop-shadow-md mb-8 max-w-xl text-justify md:text-left">
-                 Kawasan hunian eksklusif yang dirancang khusus untuk menghadirkan kenyamanan, kemudahan, dan kualitas hidup terbaik bagi Anda dan keluarga.
-                 <br/><br/>
-                 Mengusung konsep rumah minimalis modern yang sangat fungsional. Setiap ruang ditata secara cerdas untuk memberikan suasana lega dan efisien, menjadikannya pilihan sempurna bagi keluarga masa kini.
-               </p>
-             </div>
-             <div className="flex items-center justify-center lg:justify-start mb-8">
-               <img src="/AW2.png" alt="Cluster Aria Wangsakara 2" className="w-[85%] lg:w-[65%] max-w-[400px] lg:max-w-[280px] object-contain drop-shadow-2xl" />
-             </div>
-             <p className="text-white/90 text-sm md:text-base leading-relaxed font-medium drop-shadow-md max-w-xl">
-               Nikmati kenyamanan hidup di Cluster Aria Wangsakara II, sebuah cluster hunian modern yang dirancang untuk keluarga urban yang mengutamakan kemudahan, keamanan, dan nilai investasi jangka panjang.
-             </p>
+            {/* Logo above title */}
+            <div className="mb-6">
+              <img src="/AW2.png" alt="Aria Wangsakara 2" className="h-14 md:h-20 w-auto object-contain drop-shadow-2xl" />
+            </div>
+            <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 drop-shadow-lg leading-tight text-shadow">
+              Lokasi Strategis,<br/>Investasi Menarik!
+            </h2>
+            <p className="text-white/90 text-sm md:text-base leading-relaxed font-medium drop-shadow-md mb-8 max-w-xl text-justify md:text-left">
+              Kawasan hunian eksklusif yang dirancang khusus untuk menghadirkan kenyamanan, kemudahan, dan kualitas hidup terbaik bagi Anda dan keluarga.
+              <br/><br/>
+              Mengusung konsep rumah minimalis modern yang sangat fungsional. Setiap ruang ditata secara cerdas untuk memberikan suasana lega dan efisien, menjadikannya pilihan sempurna bagi keluarga masa kini.
+            </p>
           </motion.div>
 
           <div className="w-full relative mt-6 lg:mt-0 group">
@@ -80,19 +76,19 @@ export default function About() {
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              className="relative aspect-[4/5] md:aspect-[3/4] lg:aspect-[4/5] w-full rounded-[2rem] overflow-hidden border-4 border-amber-400 shadow-2xl bg-zinc-900"
+              className="relative aspect-[4/5] md:aspect-[3/4] lg:aspect-[4/5] w-full rounded-[2.5rem] overflow-hidden shadow-[0_30px_60px_-15px_rgba(0,0,0,0.7)] bg-black/20 backdrop-blur-sm"
             >
               {/* Navigation Arrows */}
               <button 
                 onClick={() => stepScroll('left')}
-                className="absolute left-4 top-1/2 -translate-y-1/2 z-40 w-12 h-12 bg-black/60 hover:bg-amber-500 rounded-full flex items-center justify-center text-white transition-all opacity-0 group-hover:opacity-100 disabled:opacity-0"
+                className="absolute left-4 top-1/2 -translate-y-1/2 z-40 w-12 h-12 bg-black/40 hover:bg-amber-500 rounded-full flex items-center justify-center text-white transition-all opacity-0 group-hover:opacity-100 disabled:opacity-0 backdrop-blur-md border border-white/10"
                 disabled={activeIndex === 0}
               >
                 <ChevronLeft className="w-8 h-8" />
               </button>
               <button 
                 onClick={() => stepScroll('right')}
-                className="absolute right-4 top-1/2 -translate-y-1/2 z-40 w-12 h-12 bg-black/60 hover:bg-amber-500 rounded-full flex items-center justify-center text-white transition-all opacity-0 group-hover:opacity-100 disabled:opacity-0"
+                className="absolute right-4 top-1/2 -translate-y-1/2 z-40 w-12 h-12 bg-black/40 hover:bg-amber-500 rounded-full flex items-center justify-center text-white transition-all opacity-0 group-hover:opacity-100 disabled:opacity-0 backdrop-blur-md border border-white/10"
                 disabled={activeIndex === houseTypes.length - 1}
               >
                 <ChevronRight className="w-8 h-8" />
@@ -125,8 +121,8 @@ export default function About() {
               onClick={() => scrollTo(i)}
               className={`transition-all duration-500 rounded-full ${
                 activeIndex === i 
-                ? "w-8 h-3 bg-amber-400 shadow-[0_0_15px_rgba(251,191,36,0.6)]" 
-                : "w-3 h-3 bg-amber-400/40 hover:bg-amber-400/60"
+                ? "w-10 h-2 bg-amber-400 shadow-[0_0_15px_rgba(251,191,36,0.8)]" 
+                : "w-2 h-2 bg-white/30 hover:bg-white/60"
               }`}
               aria-label={`Go to slide ${i + 1}`}
             />
@@ -139,9 +135,9 @@ export default function About() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.4 }}
-          className="w-full max-w-4xl mx-auto bg-white rounded-2xl overflow-hidden shadow-2xl border-2 border-amber-400/30 flex flex-col items-center"
+          className="w-full max-w-4xl mx-auto bg-white/95 backdrop-blur-md rounded-3xl overflow-hidden shadow-2xl border border-white/20 flex flex-col items-center"
         >
-          <img src="/Bank.png" alt="Bekerjasama dengan Bank" className="w-full h-auto object-cover scale-110" />
+          <img src="/Bank.png" alt="Bekerjasama dengan Bank" className="w-full h-auto object-cover scale-105" />
         </motion.div>
 
       </div>
