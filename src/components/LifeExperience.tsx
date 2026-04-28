@@ -19,7 +19,7 @@ export default function LifeExperience() {
             <span className="text-amber-400 text-xs md:text-sm font-bold tracking-widest uppercase mb-4 block">
               / LIFE AT TRIRAKSA
             </span>
-            <h2 className="text-3xl md:text-5xl font-black text-white leading-tight drop-shadow-lg">
+            <h2 className="text-3xl md:text-5xl font-bold text-white leading-tight drop-shadow-lg">
               Pengalaman Hidup di<br />Triraksa Village 2
             </h2>
           </div>
@@ -31,7 +31,7 @@ export default function LifeExperience() {
         </div>
 
         {/* Native IG Embed Slider/Grid matching User's Reference */}
-        <div className="flex overflow-x-auto xl:grid xl:grid-cols-4 gap-6 md:gap-8 pb-8 snap-x snap-mandatory [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none'] items-start">
+        <div className="flex overflow-x-auto gap-6 md:gap-8 pb-8 snap-x snap-mandatory [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none'] items-start">
           {shortcodes.map((code, idx) => (
             <motion.div
               key={idx}

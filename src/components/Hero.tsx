@@ -92,7 +92,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
-          className="absolute bottom-0 inset-x-0 bg-black/50 backdrop-blur-md border-t border-white/10 py-5 z-30"
+          className="absolute bottom-0 inset-x-0 bg-black/50 backdrop-blur-md border-t border-amber-400/30 py-5 z-30"
         >
           <div className="max-w-none mx-auto px-8 lg:px-[8%] 2xl:px-[10%] flex flex-wrap justify-between items-center text-white/90 text-sm lg:text-base font-medium">
             <div className="flex items-center gap-3">
@@ -148,6 +148,7 @@ export default function Hero() {
 
 
 
+
           {/* Harga Image (Absolute at bottom, overlapping into the red section) */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8, y: 20 }}
@@ -178,7 +179,7 @@ export default function Hero() {
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
             className="relative z-10 text-white flex flex-col items-center gap-6"
           >
-            <h2 className="text-2xl sm:text-3xl font-bold italic tracking-wide drop-shadow-md leading-tight">
+            <h2 className="text-2xl sm:text-3xl font-extrabold tracking-wide drop-shadow-md leading-tight">
               Lokasi Strategis,<br/>Investasi Menarik!
             </h2>
             
@@ -190,11 +191,11 @@ export default function Hero() {
               Mengusung konsep rumah minimalis modern yang fungsional, setiap ruang ditata secara optimal untuk memberikan suasana lega, nyaman, serta efisien dalam setiap aktivitas sehari-hari. Desain elegan dan tata ruang cerdas menjadikan hunian ini pilihan sempurna bagi keluarga masa kini.
             </p>
 
-            <div className="my-6 bg-white/95 p-5 rounded-3xl shadow-[0_10px_20px_rgba(0,0,0,0.3)]">
+            <div className="my-6 flex justify-center">
               <img 
                 src="/logo-triraksa.png" 
                 alt="Logo Triraksa" 
-                className="w-48 sm:w-56 object-contain"
+                className="w-48 sm:w-64 object-contain drop-shadow-xl"
               />
             </div>
 

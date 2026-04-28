@@ -27,7 +27,7 @@ export default function Navbar() {
       <div
         className={`w-full transition-all duration-500 ${
           scrolled
-            ? "bg-black/50 backdrop-blur-xl shadow-lg border-b border-white/10 py-4"
+            ? "bg-black/50 backdrop-blur-xl shadow-lg border-b border-amber-400/30 py-4"
             : "bg-transparent py-6"
         }`}
       >
@@ -125,7 +125,7 @@ export default function Navbar() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6, duration: 0.4 }}
-              className="mt-auto pt-8 border-t border-white/10"
+              className="mt-auto pt-8 border-t border-amber-400/30"
             >
               <a
                 href="#contact"
