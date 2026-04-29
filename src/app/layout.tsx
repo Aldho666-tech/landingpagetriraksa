@@ -10,6 +10,9 @@ const montserrat = Montserrat({
 export const metadata: Metadata = {
   title: "Triraksa Village 2",
   description: "Architecture & Real Estate Landing Page",
+  icons: {
+    icon: "/logo triraksa.png",
+  },
 };
 
 export default function RootLayout({

@@ -65,7 +65,7 @@ export default function Hero() {
                 <motion.img
                   animate={{ y: [0, -8, 0] }}
                   transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                  src="/harga.png"
+                  src="/Harga.png"
                   alt="Harga Triraksa"
                   className="w-[500px] lg:w-[650px] h-auto object-contain drop-shadow-[0_20px_30px_rgba(0,0,0,0.5)] hover:scale-105 transition-transform duration-300"
                 />

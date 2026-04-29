@@ -1,36 +1,47 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Triraksa Village 2 - Landing Page
 
-## Getting Started
+Landing page premium dan responsif untuk **Triraksa Village 2**, dikembangkan menggunakan Next.js modern dengan fokus pada estetika visual, performa tinggi, dan pengalaman pengguna yang luar biasa.
 
-First, run the development server:
+## 🚀 Fitur Utama
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Hero Section Dinamis**: Desain poster mobile yang kompak dan layout desktop yang megah.
+- **Animasi Premium**: Didukung oleh `Framer Motion` untuk transisi halus dan elemen interaktif.
+- **Responsifitas Penuh**: Dioptimalkan untuk perangkat mobile, tablet, hingga desktop.
+- **Galeri Hunian**: Menampilkan tipe unit (Brick Mezza, Plus, Neo) dengan slider interaktif.
+- **CTA Terintegrasi**: Tombol WhatsApp "Minta Brochure" dan "Jadwalkan Survey" untuk konversi maksimal.
+- **SEO Optimized**: Struktur HTML semantik dengan optimasi performa Next.js.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠️ Teknologi yang Digunakan
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Framework**: [Next.js 15+](https://nextjs.org/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **Animations**: [Framer Motion](https://www.framer.com/motion/)
+- **Icons**: [Lucide React](https://lucide.dev/)
+- **Typography**: Montserrat & Inter
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📦 Instalasi & Pengembangan
 
-## Learn More
+1. Clone repositori:
+   ```bash
+   git clone https://github.com/username/triraksa-village.git
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+2. Instal dependensi:
+   ```bash
+   npm install
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. Jalankan server lokal:
+   ```bash
+   npm run dev
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+4. Buka [http://localhost:3000](http://localhost:3000) di browser Anda.
 
-## Deploy on Vercel
+## 🌐 Deployment
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Proyek ini siap dideploy ke **Vercel** dengan konfigurasi otomatis untuk Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+Dikembangkan dengan ❤️ untuk pengalaman hunian modern terbaik.
