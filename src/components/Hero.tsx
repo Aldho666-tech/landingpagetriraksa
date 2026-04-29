@@ -31,15 +31,15 @@ export default function Hero() {
         </button>
 
         {/* Main Content Container (Left Aligned) */}
-        <div className="relative z-20 px-8 lg:px-[8%] 2xl:px-[10%] w-full max-w-none mx-auto flex flex-col justify-center h-full pt-10 pb-28">
+        <div className="relative z-20 px-8 lg:px-[8%] 2xl:px-[10%] w-full max-none mx-auto flex flex-col justify-center h-full pt-10 pb-28">
 
-          <div className="w-full max-w-3xl flex flex-col items-start text-left mt-20">
+          <div className="w-full max-w-3xl flex flex-col items-start text-left mt-32">
 
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, ease: "easeOut" }}
-              className="text-5xl lg:text-7xl font-bold text-white leading-[1.1] mb-6 drop-shadow-lg"
+              className="text-4xl lg:text-6xl font-bold text-white leading-[1.1] mb-6 drop-shadow-lg"
             >
               Hunian Impian <br />
               Keluarga Modern
@@ -49,7 +49,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, delay: 0.2, ease: "easeOut" }}
-              className="text-gray-200 text-lg lg:text-xl max-w-2xl mb-12 leading-relaxed"
+              className="text-gray-200 text-base lg:text-lg max-w-2xl mb-12 leading-relaxed"
             >
               Lebih dari 2.900 unit tersedia untuk kamu dan keluarga di Triraksa Village 2. Miliki segera hunian eksklusif dengan penawaran terbaik bulan ini.
             </motion.p>
@@ -111,60 +111,41 @@ export default function Hero() {
       {/* =========================================
           MOBILE HERO POSTER (Visible on Mobile/Tablets)
       ========================================= */}
-      <section id="home-mobile" className="flex lg:hidden flex-col w-full bg-[url('/bg-red.jpg')] bg-cover bg-center bg-no-repeat font-sans">
+      <section
+        id="home-mobile"
+        className="flex lg:hidden w-full font-sans bg-cover bg-center"
+        style={{ backgroundImage: "url('/bg-red.jpg')" }}
+      >
 
-        {/* TOP SECTION: Fasad + Promo + Harga Overlap */}
-        <div className="relative w-full flex flex-col items-center">
+        {/* Single relative container — fasad + all overlays */}
+        <div className="relative w-full">
 
-          {/* Fasad Image Background */}
-          <div className="w-full h-[55vh] min-h-[380px] relative">
+          {/* Base: Fasad image */}
+          <img
+            src="/fasad.png"
+            alt="Fasad Triraksa Village 2"
+            className="w-full h-auto block"
+          />
+
+          {/* Promo: Brick Series + FREE items */}
+          <div className="absolute top-[7%] inset-x-0 flex justify-center px-4 z-20">
             <img
-              src="/fasad.png"
-              alt="Fasad Triraksa"
-              className="absolute inset-0 w-full h-full object-cover object-top"
+              src="/promo.png"
+              alt="Promo Brick Series"
+              className="w-[80%] max-w-[320px] drop-shadow-2xl"
             />
-            {/* Optional slight dark gradient at bottom for contrast */}
-            <div className="absolute bottom-0 inset-x-0 h-16 bg-gradient-to-t from-black/20 to-transparent" />
           </div>
 
-          {/* Promo Image (Absolute at top - Mobile Only) */}
-          <motion.div
-            initial={{ opacity: 0, y: -40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="absolute top-6 inset-x-0 flex justify-center px-4 z-10"
-          >
-            <motion.img
-              animate={{ y: [0, -8, 0] }}
-              transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
-              src="/promo.png"
-              alt="Promo Triraksa"
-              className="w-[90%] max-w-sm drop-shadow-2xl"
-            />
-          </motion.div>
+          {/* Gold line — sits just above Harga.png */}
+          <div className="absolute bottom-0 inset-x-0 h-[3px] bg-gradient-to-r from-amber-700 via-amber-400 to-amber-700 z-20" />
 
-
-          {/* Harga Image (Absolute at bottom, overlapping into the red section) */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8, y: 20 }}
-            whileInView={{ opacity: 1, scale: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-            className="absolute bottom-0 translate-y-[30%] inset-x-0 flex justify-center px-4 z-20"
-          >
-            <motion.img
-              animate={{ y: [0, -6, 0] }}
-              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-              src="/Harga.png"
-              alt="Harga Triraksa"
-              className="w-[95%] max-w-[400px] drop-shadow-[0_20px_30px_rgba(0,0,0,0.6)]"
-            />
-          </motion.div>
+          {/* Harga.png — TIBAN di atas bagian bawah fasad */}
+          <img
+            src="/Harga.png"
+            alt="Harga Triraksa"
+            className="absolute bottom-35 left-5 right-5 w-90 z-10"
+          />
         </div>
-
-        {/* Reduced spacing for the overlapping Harga image on mobile */}
-        <div className="h-12 bg-transparent" />
       </section>
     </>
   );

@@ -23,10 +23,7 @@ export default function LifeExperience() {
               Testimony<br />Triraksa Village 2
             </h2>
           </div>
-          <div className="max-w-lg lg:pb-2">
-            <p className="text-white/80 text-sm md:text-base leading-relaxed font-medium">
-              Bayangkan kehidupan yang lebih nyaman di lingkungan yang tertata dengan baik serta lingkungan yang mendukung kualitas hidup yang lebih baik bagi Anda dan keluarga. Lihat lebih dekat suasana di Triraksa Village 2.
-            </p>
+          <div className="hidden lg:block max-w-lg lg:pb-2">
           </div>
         </div>
 

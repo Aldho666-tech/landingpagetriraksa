@@ -44,13 +44,13 @@ export default function About() {
   };
 
   return (
-    <section id="about" className="py-20 relative overflow-hidden bg-cover bg-center border-t border-amber-400/30" style={{ backgroundImage: "url('/bg-red.jpg')" }}>
+    <section id="about" className="py-12 lg:py-20 relative overflow-hidden bg-cover bg-center" style={{ backgroundImage: "url('/bg-red.jpg')" }}>
       <div className="absolute inset-0 bg-black/10"></div>
 
       <div className="container relative z-10 mx-auto px-6 lg:px-12 max-w-7xl">
-        
+
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center mb-20">
-          
+
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -62,12 +62,16 @@ export default function About() {
               <img src="/AW2.png" alt="Aria Wangsakara 2" className="h-14 md:h-20 w-auto object-contain drop-shadow-2xl" />
             </div>
             <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 drop-shadow-lg leading-tight text-shadow">
-              Lokasi Strategis,<br/>Investasi Menarik!
+              Lokasi Strategis,<br />Investasi Menarik!
             </h2>
-            <p className="text-white/90 text-sm md:text-base leading-relaxed font-medium drop-shadow-md mb-8 max-w-xl text-justify md:text-left">
+            {/* Mobile only text */}
+            <p className="block lg:hidden text-white/90 text-sm leading-relaxed font-medium drop-shadow-md mb-6 max-w-xl text-center">
               Kawasan hunian eksklusif yang dirancang khusus untuk menghadirkan kenyamanan, kemudahan, dan kualitas hidup terbaik bagi Anda dan keluarga.
-              <br/><br/>
-              Mengusung konsep rumah minimalis modern yang sangat fungsional. Setiap ruang ditata secara cerdas untuk memberikan suasana lega dan efisien, menjadikannya pilihan sempurna bagi keluarga masa kini.
+            </p>
+            {/* Desktop only text */}
+            <p className="hidden lg:block text-white/90 text-sm md:text-base leading-relaxed font-medium drop-shadow-md mb-8 max-w-xl text-justify md:text-left">
+              Kawasan hunian eksklusif yang dirancang khusus untuk menghadirkan kenyamanan, kemudahan, dan kualitas hidup terbaik bagi Anda dan keluarga.
+              <br /><br />
             </p>
           </motion.div>
 
@@ -79,14 +83,14 @@ export default function About() {
               className="relative aspect-[4/5] md:aspect-[3/4] lg:aspect-[4/5] w-full rounded-[2.5rem] overflow-hidden shadow-[0_30px_60px_-15px_rgba(0,0,0,0.7)] bg-black/20 backdrop-blur-sm"
             >
               {/* Navigation Arrows */}
-              <button 
+              <button
                 onClick={() => stepScroll('left')}
                 className="absolute left-4 top-1/2 -translate-y-1/2 z-40 w-12 h-12 bg-black/40 hover:bg-amber-500 rounded-full flex items-center justify-center text-white transition-all opacity-0 group-hover:opacity-100 disabled:opacity-0 backdrop-blur-md border border-white/10"
                 disabled={activeIndex === 0}
               >
                 <ChevronLeft className="w-8 h-8" />
               </button>
-              <button 
+              <button
                 onClick={() => stepScroll('right')}
                 className="absolute right-4 top-1/2 -translate-y-1/2 z-40 w-12 h-12 bg-black/40 hover:bg-amber-500 rounded-full flex items-center justify-center text-white transition-all opacity-0 group-hover:opacity-100 disabled:opacity-0 backdrop-blur-md border border-white/10"
                 disabled={activeIndex === houseTypes.length - 1}
@@ -94,7 +98,7 @@ export default function About() {
                 <ChevronRight className="w-8 h-8" />
               </button>
 
-              <div 
+              <div
                 ref={scrollRef}
                 onScroll={handleScroll}
                 className="absolute inset-0 flex overflow-x-auto snap-x snap-mandatory [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none'] touch-pan-x cursor-grab active:cursor-grabbing"
@@ -119,11 +123,10 @@ export default function About() {
             <button
               key={i}
               onClick={() => scrollTo(i)}
-              className={`transition-all duration-500 rounded-full ${
-                activeIndex === i 
-                ? "w-10 h-2 bg-amber-400 shadow-[0_0_15px_rgba(251,191,36,0.8)]" 
+              className={`transition-all duration-500 rounded-full ${activeIndex === i
+                ? "w-10 h-2 bg-amber-400 shadow-[0_0_15px_rgba(251,191,36,0.8)]"
                 : "w-2 h-2 bg-white/30 hover:bg-white/60"
-              }`}
+                }`}
               aria-label={`Go to slide ${i + 1}`}
             />
           ))}

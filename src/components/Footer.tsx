@@ -136,7 +136,7 @@ export default function Footer() {
             className="flex flex-col gap-6"
           >
             <h3 className="text-sm font-bold uppercase tracking-[0.2em] text-white/40">
-              Lokasi Kami
+              Marketing Gallery
             </h3>
             <div className="w-full h-48 rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
               <iframe
