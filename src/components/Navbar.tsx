@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
+import { FaInstagram, FaFacebook, FaTiktok } from "react-icons/fa";
 
 const navLinks = [
   { name: "HOME", href: "#home" },
@@ -57,16 +57,15 @@ export default function Navbar() {
             ))}
           </nav>
 
-          {/* RIGHT: Social Media (Desktop) */}
-          <div className="hidden lg:flex items-center justify-end gap-3 flex-shrink-0 lg:w-[200px]">
-            <a href="#" className="w-10 h-10 bg-black/40 hover:bg-black/60 rounded-xl flex items-center justify-center text-white/90 hover:text-white border border-white/10 transition-colors">
+            <div className="hidden lg:flex items-center justify-end gap-3 flex-shrink-0 lg:w-[200px]">
+            <a href="https://www.instagram.com/triraksavillage2?igsh=YWVjcWkwamNvdWk4" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-black/40 hover:bg-black/60 rounded-xl flex items-center justify-center text-white/90 hover:text-white border border-white/10 transition-colors">
               <FaInstagram className="w-5 h-5" />
             </a>
-            <a href="#" className="w-10 h-10 bg-black/40 hover:bg-black/60 rounded-xl flex items-center justify-center text-white/90 hover:text-white border border-white/10 transition-colors">
-              <FaTwitter className="w-5 h-5" />
+            <a href="https://www.facebook.com/share/17MVpUbQhE/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-black/40 hover:bg-black/60 rounded-xl flex items-center justify-center text-white/90 hover:text-white border border-white/10 transition-colors">
+              <FaFacebook className="w-5 h-5" />
             </a>
-            <a href="#" className="w-10 h-10 bg-black/40 hover:bg-black/60 rounded-xl flex items-center justify-center text-white/90 hover:text-white border border-white/10 transition-colors">
-              <FaYoutube className="w-5 h-5" />
+            <a href="https://www.tiktok.com/@triraksa.village2?_r=1&_t=ZS-95w7CCul8SY" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-black/40 hover:bg-black/60 rounded-xl flex items-center justify-center text-white/90 hover:text-white border border-white/10 transition-colors">
+              <FaTiktok className="w-5 h-5" />
             </a>
           </div>
 
@@ -129,14 +128,14 @@ export default function Navbar() {
             >
               <div className="flex flex-col gap-6">
                 <div className="flex items-center gap-4">
-                  <a href="#" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/60 hover:text-amber-400 hover:border-amber-400/50 transition-all">
+                  <a href="https://www.instagram.com/triraksavillage2?igsh=YWVjcWkwamNvdWk4" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/60 hover:text-amber-400 hover:border-amber-400/50 transition-all">
                     <FaInstagram className="w-4 h-4" />
                   </a>
-                  <a href="#" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/60 hover:text-amber-400 hover:border-amber-400/50 transition-all">
-                    <FaTwitter className="w-4 h-4" />
+                  <a href="https://www.facebook.com/share/17MVpUbQhE/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/60 hover:text-amber-400 hover:border-amber-400/50 transition-all">
+                    <FaFacebook className="w-4 h-4" />
                   </a>
-                  <a href="#" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/60 hover:text-amber-400 hover:border-amber-400/50 transition-all">
-                    <FaYoutube className="w-4 h-4" />
+                  <a href="https://www.tiktok.com/@triraksa.village2?_r=1&_t=ZS-95w7CCul8SY" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/60 hover:text-amber-400 hover:border-amber-400/50 transition-all">
+                    <FaTiktok className="w-4 h-4" />
                   </a>
                 </div>
                 

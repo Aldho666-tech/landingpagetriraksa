@@ -12,10 +12,9 @@ const navLinks = [
 ];
 
 const socialLinks = [
-  { icon: <FaWhatsapp className="w-5 h-5" />, href: "https://wa.me/6281234567890", label: "WhatsApp" },
-  { icon: <FaInstagram className="w-5 h-5" />, href: "#", label: "Instagram" },
-  { icon: <FaFacebook className="w-5 h-5" />, href: "#", label: "Facebook" },
-  { icon: <FaTiktok className="w-5 h-5" />, href: "#", label: "TikTok" },
+  { icon: <FaInstagram className="w-5 h-5" />, href: "https://www.instagram.com/triraksavillage2?igsh=YWVjcWkwamNvdWk4", label: "Instagram" },
+  { icon: <FaFacebook className="w-5 h-5" />, href: "https://www.facebook.com/share/17MVpUbQhE/?mibextid=wwXIfr", label: "Facebook" },
+  { icon: <FaTiktok className="w-5 h-5" />, href: "https://www.tiktok.com/@triraksa.village2?_r=1&_t=ZS-95w7CCul8SY", label: "TikTok" },
 ];
 
 export default function Footer() {
@@ -136,11 +135,11 @@ export default function Footer() {
             className="flex flex-col gap-6"
           >
             <h3 className="text-sm font-bold uppercase tracking-[0.2em] text-white/40">
-              Marketing Gallery
+              Lokasi Marketing
             </h3>
             <div className="w-full h-48 rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d589.5508003675973!2d106.46184012357536!3d-6.262512605101725!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e42070f1f8d8715%3A0xd3a9fd5dd2411273!2sTriraksa%20Village%202!5e0!3m2!1sid!2sid!4v1777361303700!5m2!1sid!2sid"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d495.7511994007518!2d106.46171372486423!3d-6.262465463252287!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e42070011bbf2d9%3A0x503948273e68efda!2sMarketing%20Gallery!5e0!3m2!1sid!2sid!4v1777444526033!5m2!1sid!2sid"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}

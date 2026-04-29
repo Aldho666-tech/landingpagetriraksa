@@ -30,7 +30,7 @@ export default function Details() {
       <div className="absolute bottom-40 left-0 w-32 h-32 bg-green-500/30 rounded-tr-[100px] blur-xl"></div>
 
       <div className="container relative z-10 mx-auto px-6 max-w-4xl">
-        
+
         {/* Advantages List */}
         <div className="flex flex-col gap-12 mb-20">
           {advantages.map((item, index) => (
@@ -72,7 +72,7 @@ export default function Details() {
 
           <h4 className="text-white text-2xl md:text-3xl font-bold mb-3 tracking-tight">Ikuti Media Sosial Kami</h4>
           <p className="text-amber-200/80 text-xs md:text-sm mb-10 font-bold tracking-[0.2em] uppercase">Untuk Informasi Terkini</p>
-          
+
           <div className="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-12">
             <a href="#" className="flex items-center gap-3 text-white hover:text-amber-400 transition-all hover:scale-110 group">
               <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-amber-400 group-hover:text-amber-950 transition-colors">

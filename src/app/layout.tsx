@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   title: "Triraksa Village 2",
   description: "Architecture & Real Estate Landing Page",
   icons: {
-    icon: "/logo triraksa.png",
+    icon: "/logo-triraksa.png",
   },
 };
 

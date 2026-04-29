@@ -17,7 +17,7 @@ export default function LifeExperience() {
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-8 mb-12 lg:mb-16">
           <div className="max-w-xl">
             <span className="text-amber-400 text-xs md:text-sm font-bold tracking-widest uppercase mb-4 block">
-              / LIFE AT TRIRAKSA
+
             </span>
             <h2 className="text-3xl md:text-5xl font-bold text-white leading-tight drop-shadow-lg">
               Testimony<br />Triraksa Village 2
