@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, ArrowUpRight } from "lucide-react";
 import { useRef, useState } from "react";
 
 const houseTypes = [
@@ -73,6 +73,7 @@ export default function About() {
               Kawasan hunian eksklusif yang dirancang khusus untuk menghadirkan kenyamanan, kemudahan, dan kualitas hidup terbaik bagi Anda dan keluarga.
               <br /><br />
             </p>
+
           </motion.div>
 
           <div className="w-full relative mt-6 lg:mt-0 group">

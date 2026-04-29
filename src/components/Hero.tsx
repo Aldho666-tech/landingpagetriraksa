@@ -127,9 +127,17 @@ export default function Hero() {
             className="w-full h-auto block"
           />
 
-          {/* Promo: Brick Series + FREE items */}
+          {/* Promo: Brick Series + FREE items (Animasikan) */}
           <div className="absolute top-[7%] inset-x-0 flex justify-center px-4 z-20">
-            <img
+            <motion.img
+              initial={{ opacity: 0, y: -20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              animate={{ y: [0, -8, 0] }}
+              transition={{
+                y: { duration: 3, repeat: Infinity, ease: "easeInOut" },
+                opacity: { duration: 0.8 },
+                y_initial: { duration: 0.8 }
+              }}
               src="/promo.png"
               alt="Promo Brick Series"
               className="w-[80%] max-w-[320px] drop-shadow-2xl"
@@ -139,12 +147,32 @@ export default function Hero() {
           {/* Gold line — sits just above Harga.png */}
           <div className="absolute bottom-0 inset-x-0 h-[3px] bg-gradient-to-r from-amber-700 via-amber-400 to-amber-700 z-20" />
 
-          {/* Harga.png — TIBAN di atas bagian bawah fasad */}
-          <img
+          {/* Harga.png — TIBAN di atas bagian bawah fasad (Animasikan) */}
+          <motion.img
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
             src="/Harga.png"
             alt="Harga Triraksa"
             className="absolute bottom-35 left-5 right-5 w-90 z-10"
           />
+
+          {/* Button CTA (Minta Brochure) Animasikan */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="absolute bottom-15 inset-x-0 flex justify-center z-20 px-6"
+          >
+            <motion.a
+              animate={{ scale: [1, 1.02, 1] }}
+              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+              href="https://wa.me/6282130070003"
+              className="w-70 max-w-[340px] flex items-center justify-center gap-3 bg-amber-400 hover:bg-amber-300 text-amber-900 font-bold py-4 rounded-xl transition-all shadow-xl active:scale-95 text-base"
+            >
+              Minta Brochure <ArrowUpRight className="w-5 h-5" />
+            </motion.a>
+          </motion.div>
         </div>
       </section>
     </>
