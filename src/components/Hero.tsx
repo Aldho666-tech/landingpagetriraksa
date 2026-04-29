@@ -135,8 +135,7 @@ export default function Hero() {
               animate={{ y: [0, -8, 0] }}
               transition={{
                 y: { duration: 3, repeat: Infinity, ease: "easeInOut" },
-                opacity: { duration: 0.8 },
-                y_initial: { duration: 0.8 }
+                opacity: { duration: 0.8 }
               }}
               src="/promo.png"
               alt="Promo Brick Series"
